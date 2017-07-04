@@ -1,0 +1,271 @@
+<!DOCTYPE HTML>
+<!--
+Name:		GoLab Wind Energy Simulation
+Version: 	v2.0
+Type:		Beta+
+Author:		N Rudd
+
+Dependencies:
+JQuery 1.11,0 (javascript libray)
+JQueryUI 1.10.4 (javascript libray)
+Grapher.js (javascript libray)
+Piechart.js (javascript libray)
+Note: All JS libraries are local with relative paths
+
+Rev Date:	2016-12-01
+Rev Notes:
+Documentation and comment changes for production release 
+-->
+
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+		<!-- Google Tag Manager -->
+		<script>
+			(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+			'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+			})(window,document,'script','dataLayer','GTM-KFFCFJL');
+		</script>
+		<!-- End Google Tag Manager -->
+		<script>
+		  dataLayer = [];
+		</script>
+		<!-- Google Analytics
+		<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-89555283-1', 'auto');
+		ga('send', 'pageview');
+		</script>
+		End Google Analytics -->
+
+	<title>GoLab - Wind Energy Simulation</title>
+	<link rel="stylesheet" type="text/css" href="styles/jquery-ui-1.10.4.custom.WE1.css" />
+	<script type="text/javascript" src="jqScripts/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="jqScripts/jquery-ui-1.10.4.custom.min.js"></script>
+	<script type="text/javascript" src="scripts/jquiCustom.js"></script>
+	<script type="text/javascript" src="scripts/windEnergy.js"></script>
+	<script type="text/javascript" src="scripts/grapher.js"></script>
+	<script type="text/javascript" src="scripts/piechart.js"></script>
+	
+</head>
+<body onload="initialiseImages()">
+	<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WGTXR4Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<script>
+	  dataLayer.push({
+    'event': 'launch', 'goedle' : true
+    });
+	</script>
+	<div id="accordion">
+		<!-- Home page -->
+		<h3>Home</h3>
+		<div onclick="dataLayer.push({'event': 'view.home'});" id="tab1">
+			<table id="table1">
+				<tr>
+					<td><img src="images/GoLabLogo.png" />
+					<td width="500">Welcome to the GoLab Wind Energy Simulation. Take control of a wind farm to provide electrical energy to a small town. Understand how random changes - in wind speed and power requirement of the town - affect the use of this natural energy resource.
+				
+				<tr>
+					<td>
+					<td><img src="images/agMain.gif" />			
+			</table>
+		</div>
+		
+		<!-- Instructions page -->
+		<h3>Instructions</h3>
+		<div onclick="dataLayer.push({'event': 'view.instructions', 'goedle' : true});" id="tab1">
+			<div id="tabs">
+				<ul>
+					<li><a  href="#ctab1">Aims of this simulation</a></li>
+					<li><a  href="#ctab2">Configuring the simulation</a></li>
+					<li><a  href="#ctab3">Running the simulation</a></li>
+					<li><a  href="#ctab4">Charts and reports</a></li>
+					<li><a  href="#ctab5">About wind turbines</a></li>
+				</ul>
+				
+				<div id="ctab1">
+					<p>On a planet with an increasing population and finite fossil fuels, the need for alternative energy sources increases. Wind energy is one such source. Wind turbines use this natural resource to generate electricity. </p>
+					<p>There are many benefits to the use of wind energy. Wind is a renewable energy resource and there are no fuel costs. No harmful polluting gases are produced. Once the wind turbine is built the energy it produces does not cause green house gases or other pollutants. Remote areas that are not connected to the electricity power grid can use wind turbines to produce their own supply.</p>
+					<p>However, the amount of electricity generated depends on the strength of the wind - if there is no wind, there is no electricity. Also large wind farms are needed to provide entire communities with enough electricity. For example, the largest single turbine available today can only provide enough electricity for 475 homes, when running at full capacity. </p>
+					<p>The aim of this simulation is to power a small town or village using a wind farm of between 1 and 10 turbines. You will see that maintaining the correct amount of power - not too little, or not too much -  while both wind and the power requirements of the town are constantly fluctuating can prove a challenge. Sometimes there will be insufficient power generated even with all available turbines in operation. At other times the power generated will be too great. The aim is to maximise the amount of time that only the correct amount of electricity is generated.</p>		
+					<p>You will have control over the range of wind generated during the simulation, the number of turbines available, the range of of power required by the town or village, and the speed at which the simulation runs.</p>
+					<p>While the simulation is running you will be able to add or remove wind turbines to generate more or less electricity, pause the simulation, or stop and reset to reconfigure and start again.</p>
+					<p>The results page shows a bar graph comparing the power requirements of the town with the power generated by the wind turbines for each hour of the virtual day. Pie charts show you a comparison between insufficient power generated, the correct amount of power generated, or too much power generated.</p>
+					<p>Good luck!!</p>	
+				</div>
+				
+				<div id="ctab2">
+					<table>
+						<tr>
+							<td width="400">
+							The configuration page is where you can set the parameters for the range of wind speed used during the simulation, the number of turbines available to add to or remove from the simulation, and the range of the power requirements of the town or village.
+							<br><br>
+							To change these settings simply drag the handles of the appropriate slider bars. If you want to set a specific range to a single figure - for example have a wind speed of only 9 m/s - simply drag the minimum and maximum handles to the same position.
+							<br><br>
+							The buttons at the bottom of the configuration page allow you to set the virtual speed of the simulation. At normal speed time elapses at approximately 1 real second for 1 virtual minute, at fast speed it is 1 real second for 2 virtual minutes, and at warp speed it is 1 real second for 4 virtual minutes.
+							<br><br>
+							Finally you should be aware that although you can open the configuration section and make changes while the simulation is running or paused, changes will not be applied until the simulation is 'reset'.
+							<td><img src="images/ConfigIMG.png" width="600" height="450"/>
+					</table>
+
+				</div>
+				
+				<div id="ctab3">
+					<table>
+						<tr>
+							<td width="300">
+							The core simulation pages is where you run the simulation. You are able to start, pause, restart and pause the simulation using the buttons at the top of the screen. While the simulation is running (although not when it is paused) use the add or remove turbines buttons to increase or decrease the output power of the whole wind farm.
+							<br><br>
+							The data to the left of the screen shows you the configuration settings currently active. The current simulations values and simulation status sections change dynamically while the simulation is running and provide you with key information.
+							<br><br>
+							The wind farm animation will reflect the number of turbines currently in operation. The power output indicator (beneath the animation) informs you whether the current wind speed and number of turbines combination is generating too little, too much of the correct amount of electricity to power the town.
+							<td><img src="images/SimulationIMG.png" width="600" height="450"/>
+					</table>
+				</div>
+				
+				<div id="ctab4">
+					<table>
+						<tr>
+							<td>The report charts page displays two charts. A bar chart shows a comparison between the power requirements of the town with the power output of the wind farm. This chart is updated every virtual hour. A pie chart shows the percentages for too little power generated, too much, and the correct amount. The pie chart is updated constantly. You can toggle between the two charts using the button at the top left of the page. Additionally the pie chart has two modes - the percentages for the whole simulation, and for the current hour. toggle between these using the 'Show values for ..' button.
+						<tr>
+							<td><img src="images/GraphIMG.png" width="840" height="400"/>
+					</table>
+				
+				</div>	
+				<div id="ctab5">
+					<table>
+						<tr>
+							<td width="300">
+							Wind turbines are quite simple in design. There are the propellers, a shaft and a generator. The propellers catch the wind and help rotate the shaft. The turning of the shaft helps to power the generator and create electricity. 
+							<br><br>
+							Although wind turbine technology has improved efficiency since they became a serious source alternative energy, the amount of electricity produced by a wind turbine (measured in kilowatts - kw) requires a minimum wind speed (measured in metres per second - m/s), and will not produce any additional electricity once a peak wind speed has been reached.
+							<br><br>
+							As can be seen by the graph, the turbines used in this simulation simulation start producing electricity at approximately 3 m/s, and reach their maximum output at approximately 14 m/s. You will be able to observe this effect by altering the settings of the wind speed parameter when you configure the simulation.
+							<td><img src="images/TurbineOutput.png" width="600" height="450"/>
+					</table>
+				
+				</div>
+			</div>
+		</div>
+		
+		<!-- Configuration page -->
+		<h3>Configuration</h3>
+		<div onclick="dataLayer.push({'event': 'view.configuration', 'goedle' : true});" id="tab2">
+			<p>For each of the three values - wind speed, number of turbines, and power requirements for the town drag the handles of the slides to change the range (minimum and maximum) that the simulation will use.</p>
+			<br>
+			<p>
+				<label for="amount">Wind Speed - range from 0 to 20 m/s</label><br>
+				<input type="text" id="amount" style="border:0; color:#f6931f; font-weight:bold;">
+			</p>
+			<div id="sliderWindSpeed"></div>
+			<br>
+			<p>
+				<label for="amount1"></label>Number of Turbines - range from 1 to 10<br>
+				<input type="text" id="amount1" style="border:0; color:#f6931f; font-weight:bold;">
+			</p>
+			<div id="sliderNumTurbines"></div>
+			<br>
+			
+			<p>
+				<label for="amount3"></label>Power Requirements of the Town - range from 1000 to 24000 kw - in steps of 200 kw<br>
+				<input type="text" id="amount3" style="border:0; color:#f6931f; font-weight:bold;">
+			</p>
+			<div id="sliderPowerReqs2"></div>
+			<br><br>
+			<p>Use the buttons below to select the speed at which the simulation will run.</p>
+			<p>Select simulation speed.</p>
+			<form>
+			  <div id="radio">
+				<input onclick="dataLayer.push({'event': 'click.simulation_speed', 'event_id': 'normal_speed', 'goedle' : true });" type="radio" id="radio1" name="radio" checked="checked"><label for="radio1">Normal speed</label>
+				<input onclick="dataLayer.push({'event': 'click.simulation_speed', 'event_id': 'fast_speed' , 'goedle' : true});"type="radio" id="radio2" name="radio"><label for="radio2">Fast speed</label>
+				<input onclick="dataLayer.push({'event': 'click.simulation_speed', 'event_id': 'warp_speed', 'goedle' : true });"type="radio" id="radio3" name="radio"><label for="radio3">Warp speed</label>
+			  </div>
+			</form>
+			<br><br>
+		
+		</div>
+		
+		<!-- Simulation page -->
+		<h3>Simulation</h3>
+		<div id="tab3">
+			<table>
+				<tr>
+					<td width="460">
+						<input onclick="dataLayer.push({'event': 'start.simulation'});" id="simcontrol1" type="submit" value="Start / Restart">	
+						<input onclick="dataLayer.push({'event': 'pause.simulation'});" id="simcontrol2" type="submit" value="Pause Simulation">
+						<input onclick="dataLayer.push({'event': 'reset.simulation'});" id="simcontrol3" type="submit" value="Reset Simulation">	
+					</td>
+					<td width="300">
+						<input onclick="dataLayer.push({'event': 'add.turbine'});" id="addturbine" type="submit" value="Add Turbine">		
+						<input onclick="dataLayer.push({'event': 'remove.turbine'});" id="removeturbine" type="submit" value="Remove Turbine">	
+					</td>	
+				</tr>
+			</table>
+			<br>	
+		<table>
+			<tr>
+				<td colspan="2"  class="data0">Configuration settings
+				<td rowspan="12"><img id="turbineimg" src="images/ag1-01.png" width="495" height="360"></img>
+			<tr>
+				<td class="data1">Wind Speed Range
+				<td id="wConfig" class="data2" width="332">
+			<tr>
+				<td class="data1">Num Turbine Range
+				<td id="tConfig" class="data2">
+			<tr>
+				<td class="data1">Power Range
+				<td id="pConfig" class="data2">
+			<tr>
+				<td class="data1">Sim speed
+				<td id="sConfig" class="data2">
+			<tr>
+				<td colspan="2" class="data0">Current simulation values
+			<tr>
+				<td class="data1">Current Wind
+				<td id="wCurrent" class="data3">
+			<tr>
+				<td class="data1">Current Turbs
+				<td id="tCurrent" class="data3">
+			<tr>
+				<td class="data1">Current Output
+				<td id="oCurrent" class="data3">
+			<tr>
+				<td class="data1">Power Requirements
+				<td id="pCurrent" class="data3">
+			<tr>
+				<td colspan="2" class="data0">Simulation Status
+			<tr>
+				<td class="data1">Power Status
+				<td id="pStatus" class="data3">
+			<tr>
+				<td class="data1">Sim Status
+				<td id="xCurrent" class="data3">
+				<td rowspan="3"><img src="images/nFlag2.png" id="powersignal" width="180" height="60"></img>
+				
+			<tr>
+				<td class="data1">Time of Day
+				<td id="realTime" class="data3">
+			<tr>
+		</table>	
+		</div>
+		<!-- Results page -->
+		<h3>Report Charts</h3>
+		<div onclick="dataLayer.push({'event': 'view.show_power_output_report'});" id="tab4">
+			<input onclick="dataLayer.push({'event': 'view.show_values_for_current_hour'});" id="swapchart" type="submit" value="">
+			<input onclick="dataLayer.push({'event': 'view.show_pie_charts'});" id="pieselect" type="submit" value="">
+			<div>
+				<canvas id="canvasmain" width="800" height="600"></canvas>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
