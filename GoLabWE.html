@@ -21,29 +21,17 @@ Documentation and comment changes for production release
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <head>
 		<!-- Google Tag Manager -->
-		<script>
-			(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-			'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-			})(window,document,'script','dataLayer','GTM-KFFCFJL');
-		</script>
+		<!-- Google Tag Manager -->
+<script>
+	(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-KFFCFJL');
+	dataLayer = []
+</script>
+<!-- End Google Tag Manager -->
 		<!-- End Google Tag Manager -->
-		<script>
-		  dataLayer = [];
-		</script>
-		<!-- Google Analytics
-		<script>
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-		ga('create', 'UA-89555283-1', 'auto');
-		ga('send', 'pageview');
-		</script>
-		End Google Analytics -->
-
 	<title>GoLab - Wind Energy Simulation</title>
 	<link rel="stylesheet" type="text/css" href="styles/jquery-ui-1.10.4.custom.WE1.css" />
 	<script type="text/javascript" src="jqScripts/jquery-1.11.0.min.js"></script>
@@ -59,11 +47,11 @@ Documentation and comment changes for production release
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WGTXR4Z"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-	<script>
-	  dataLayer.push({
-    'event': 'launch', 'goedle' : {'app_version': 'v1.2d'}
-    });
-	</script>
+<script>
+		  dataLayer.push({
+	    'event': 'launch', 'goedle' : {'app_version': 'v1.2d'}
+	    });
+</script>
 	<div id="accordion">
 		<!-- Home page -->
 		<h3>Home</h3>
@@ -78,10 +66,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					<td><img src="images/agMain.gif" />			
 			</table>
 		</div>
-		
 		<!-- Instructions page -->
 		<h3>Instructions</h3>
-		<div onclick="dataLayer.push({'event': 'view.instructions', 'goedle' : true});" id="tab1">
+		<div onclick="dataLayer.push({'event': 'view.instructions'});" id="tab1">
 			<div id="tabs">
 				<ul>
 					<li><a  href="#ctab1">Aims of this simulation</a></li>
@@ -158,7 +145,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		
 		<!-- Configuration page -->
 		<h3>Configuration</h3>
-		<div onclick="dataLayer.push({'event': 'view.configuration', 'goedle' : true});" id="tab2">
+		<div onclick="dataLayer.push({'event': 'view.configuration'});" id="tab2">
 			<p>For each of the three values - wind speed, number of turbines, and power requirements for the town drag the handles of the slides to change the range (minimum and maximum) that the simulation will use.</p>
 			<br>
 			<p>
@@ -184,9 +171,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			<p>Select simulation speed.</p>
 			<form>
 			  <div id="radio">
-				<input onclick="dataLayer.push({'event': 'click.simulation_speed', 'event_id': 'normal_speed', 'goedle' : true });" type="radio" id="radio1" name="radio" checked="checked"><label for="radio1">Normal speed</label>
-				<input onclick="dataLayer.push({'event': 'click.simulation_speed', 'event_id': 'fast_speed' , 'goedle' : true});"type="radio" id="radio2" name="radio"><label for="radio2">Fast speed</label>
-				<input onclick="dataLayer.push({'event': 'click.simulation_speed', 'event_id': 'warp_speed', 'goedle' : true });"type="radio" id="radio3" name="radio"><label for="radio3">Warp speed</label>
+				<input onclick="dataLayer.push({'event': 'click.simulation_speed', 'event_id': 'normal_speed'});" type="radio" id="radio1" name="radio" checked="checked"><label for="radio1">Normal speed</label>
+				<input onclick="dataLayer.push({'event': 'click.simulation_speed', 'event_id': 'fast_speed'});"type="radio" id="radio2" name="radio"><label for="radio2">Fast speed</label>
+				<input onclick="dataLayer.push({'event': 'click.simulation_speed', 'event_id': 'warp_speed'});"type="radio" id="radio3" name="radio"><label for="radio3">Warp speed</label>
 			  </div>
 			</form>
 			<br><br>
@@ -266,6 +253,5 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			</div>
 		</div>
 	</div>
-
 </body>
 </html>
