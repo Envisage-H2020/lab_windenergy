@@ -28,7 +28,6 @@ Documentation and comment changes for production release
 	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 	})(window,document,'script','dataLayer','GTM-KFFCFJL');
-	dataLayer = []
 </script>
 <!-- End Google Tag Manager -->
 		<!-- End Google Tag Manager -->
@@ -43,19 +42,19 @@ Documentation and comment changes for production release
 	
 </head>
 <body onload="initialiseImages()">
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		window.dataLayer.push({
+	'event': 'launch', 'goedle': {'app_version': 'v1.3d'}});
+	</script>
 	<!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WGTXR4Z"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-<script>
-		  dataLayer.push({
-	    'event': 'launch', 'goedle' : {'app_version': 'v1.2d'}
-	    });
-</script>
 	<div id="accordion">
 		<!-- Home page -->
 		<h3>Home</h3>
-		<div onclick="dataLayer.push({'event': 'view.home'});" id="tab1">
+		<div onclick="window.dataLayer.push({'event': 'view.home'});" id="tab1">
 			<table id="table1">
 				<tr>
 					<td><img src="images/GoLabLogo.png" />
@@ -68,7 +67,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		</div>
 		<!-- Instructions page -->
 		<h3>Instructions</h3>
-		<div onclick="dataLayer.push({'event': 'view.instructions'});" id="tab1">
+		<div onclick="window.dataLayer.push({'event': 'view.instructions'});" id="tab1">
 			<div id="tabs">
 				<ul>
 					<li><a  href="#ctab1">Aims of this simulation</a></li>
@@ -145,7 +144,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		
 		<!-- Configuration page -->
 		<h3>Configuration</h3>
-		<div onclick="dataLayer.push({'event': 'view.configuration'});" id="tab2">
+		<div onclick="window.dataLayer.push({'event': 'view.configuration'});" id="tab2">
 			<p>For each of the three values - wind speed, number of turbines, and power requirements for the town drag the handles of the slides to change the range (minimum and maximum) that the simulation will use.</p>
 			<br>
 			<p>
@@ -171,9 +170,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			<p>Select simulation speed.</p>
 			<form>
 			  <div id="radio">
-				<input onclick="dataLayer.push({'event': 'click.simulation_speed', 'event_id': 'normal_speed'});" type="radio" id="radio1" name="radio" checked="checked"><label for="radio1">Normal speed</label>
-				<input onclick="dataLayer.push({'event': 'click.simulation_speed', 'event_id': 'fast_speed'});"type="radio" id="radio2" name="radio"><label for="radio2">Fast speed</label>
-				<input onclick="dataLayer.push({'event': 'click.simulation_speed', 'event_id': 'warp_speed'});"type="radio" id="radio3" name="radio"><label for="radio3">Warp speed</label>
+				<input onclick="window.dataLayer.push({'event': 'click.simulation_speed', 'event_id': 'normal_speed'});" type="radio" id="radio1" name="radio" checked="checked"><label for="radio1">Normal speed</label>
+				<input onclick="window.dataLayer.push({'event': 'click.simulation_speed', 'event_id': 'fast_speed'});"type="radio" id="radio2" name="radio"><label for="radio2">Fast speed</label>
+				<input onclick="window.dataLayer.push({'event': 'click.simulation_speed', 'event_id': 'warp_speed'});"type="radio" id="radio3" name="radio"><label for="radio3">Warp speed</label>
 			  </div>
 			</form>
 			<br><br>
@@ -186,13 +185,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			<table>
 				<tr>
 					<td width="460">
-						<input onclick="dataLayer.push({'event': 'start.simulation'});" id="simcontrol1" type="submit" value="Start / Restart">	
-						<input onclick="dataLayer.push({'event': 'pause.simulation'});" id="simcontrol2" type="submit" value="Pause Simulation">
-						<input onclick="dataLayer.push({'event': 'reset.simulation'});" id="simcontrol3" type="submit" value="Reset Simulation">	
+						<input onclick="window.dataLayer.push({'event': 'start.simulation'});" id="simcontrol1" type="submit" value="Start / Restart">	
+						<input onclick="window.dataLayer.push({'event': 'pause.simulation'});" id="simcontrol2" type="submit" value="Pause Simulation">
+						<input onclick="window.dataLayer.push({'event': 'reset.simulation'});" id="simcontrol3" type="submit" value="Reset Simulation">	
 					</td>
 					<td width="300">
-						<input onclick="dataLayer.push({'event': 'add.turbine'});" id="addturbine" type="submit" value="Add Turbine">		
-						<input onclick="dataLayer.push({'event': 'remove.turbine'});" id="removeturbine" type="submit" value="Remove Turbine">	
+						<input onclick="window.dataLayer.push({'event': 'add.turbine'});" id="addturbine" type="submit" value="Add Turbine">		
+						<input onclick="window.dataLayer.push({'event': 'remove.turbine'});" id="removeturbine" type="submit" value="Remove Turbine">	
 					</td>	
 				</tr>
 			</table>
@@ -245,9 +244,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		</div>
 		<!-- Results page -->
 		<h3>Report Charts</h3>
-		<div onclick="dataLayer.push({'event': 'view.show_power_output_report'});" id="tab4">
-			<input onclick="dataLayer.push({'event': 'view.show_values_for_current_hour'});" id="swapchart" type="submit" value="">
-			<input onclick="dataLayer.push({'event': 'view.show_pie_charts'});" id="pieselect" type="submit" value="">
+		<div onclick="window.dataLayer.push({'event': 'view.show_power_output_report'});" id="tab4">
+			<input onclick="window.dataLayer.push({'event': 'view.show_values_for_current_hour'});" id="swapchart" type="submit" value="">
+			<input onclick="window.dataLayer.push({'event': 'view.show_pie_charts'});" id="pieselect" type="submit" value="">
 			<div>
 				<canvas id="canvasmain" width="800" height="600"></canvas>
 			</div>
